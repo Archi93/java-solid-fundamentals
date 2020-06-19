@@ -13,6 +13,8 @@ public class Calculations {
         // 4. Oblicz różnicę między BMI obecnym, a BMI docelowym.
         // 5. Oblicz potrzebną zmianę wagi jako wynik mnożenia różnicy BMI i wzrostu wyrażonego w metrach
         //    i podniesionego do kwadratu.
+        String endDecision = "n";
+        while (!"y".equals(endDecision)) {
         int heightInCm = Prompt.promptInt("Podaj wzrost w cm: ");
         float weightInKg = Prompt.promptFloat("Podaj wagę w kg: ");
         float targetBmi = Prompt.promptFloat("Podaj docelowe BMI: ");
@@ -47,8 +49,10 @@ public class Calculations {
 
         // 5. Oblicz potrzebną zmianę wagi jako wynik mnożenia różnicy BMI przez wzrost wyrażony w metrach
         //    i podniesiony do kwadratu.
-        System.out.println("Docelowa zmiana wagi: " + weightChange);
+        System.out.println("Docelowa zmiana wagi: " + weightChange + "\n");
         
+        endDecision = Prompt.promptEnd("Czy zakończyć działanie programy y / n ?");
+        }
    
     }
 }

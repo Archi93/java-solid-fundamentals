@@ -29,4 +29,10 @@ public class Prompt {
         double value = scanner.nextDouble();
         return value;
     }
+    
+    public static String promptEnd ( String promptText) {
+        System.out.println(promptText);
+        String value = scanner.next();
+        return value;
+    }
 }
