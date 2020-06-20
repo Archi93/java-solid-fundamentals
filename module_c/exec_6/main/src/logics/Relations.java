@@ -53,7 +53,7 @@ public class Relations {
          */
         System.out.print("Podaj swoj wiek: ");
         int age = scanner.nextInt();
-        boolean adult = age > 18;
+        boolean adult = age >= 18;
         System.out.println("Czy jesteś pełnoletni? " + adult);
            
         System.out.print("Podaj rok urodzenia: ");
@@ -75,27 +75,38 @@ public class Relations {
         
         System.out.print("Podaj numer miesiąca, w którym się urodziłeś: ");
         int monthOfBirth = scanner.nextInt();
-        boolean birthInMayOrDecember = monthOfBirth == 5 | monthOfBirth == 12;
+        boolean birthInMayOrDecember = monthOfBirth == 5 ^ monthOfBirth == 12;
         System.out.println("Czy urodziłeś się w maju albo w grudniu? " + birthInMayOrDecember);
         
         System.out.print("Podaj dzień roku w którym się urodziłeś: ");
-        int dayOfYearOfBirth = scanner.nextInt();
-        boolean birthInSpring = dayOfYearOfBirth >= 80 & dayOfYearOfBirth < 173;
+        int dayOfMonthOfBirth = scanner.nextInt();
+        boolean birthInSpring = dayOfMonthOfBirth >= 20 & monthOfBirth == 3
+                              ^ dayOfMonthOfBirth <= 21 & monthOfBirth == 6
+                              ^ monthOfBirth == 4
+                              ^ monthOfBirth ==5;
         System.out.println("Czy urudziłeś się w wiosnę? " + birthInSpring);
 
-       // System.out.print("Który mamy dzień roku? ");
-       // int currentDayOfYear = scanner.nextInt();
-      //  boolean birthdayIn100DaysOrWas50DaysAgo = currentDayOfYear
-       // System.out.println("Czy masz urodziny za 100 dni albo miałeś urodziny 50 dni temu? ");
-
-        char lastLetterOfFirstName;
-        System.out.println("Czy Twoje imię kończy się na literę 'a'? ");
-
-        char firstLetterOfFirstName;
-        char firstLetterOfLastName;
-        System.out.println("Czy Twoje imię i nazwisko zaczyna się na tą samą literę? ");
+        System.out.print("Który mamy dzień roku? ");
+        int currentDayOfYear = scanner.nextInt();
+        System.out.print("Podaj numer dnia w roku w którym się urodziłeś: ");
+        int dayInYearOfBirth = scanner.nextInt();
+        boolean birthdayIn100DaysOrWas50DaysAgo = currentDayOfYear + 100 == dayInYearOfBirth ^ currentDayOfYear - 50 == dayInYearOfBirth;
+        System.out.println("Czy masz urodziny za 100 dni albo miałeś urodziny 50 dni temu? " + birthdayIn100DaysOrWas50DaysAgo);
+           
+        System.out.print("Podaj literę na którą kończy się twoje imię: ");
+        char lastLetterOfFirstName = scanner.next().charAt(0);
+        boolean lastLetterOfMyNameIsA = 'a' == lastLetterOfFirstName;
+        System.out.println("Czy Twoje imię kończy się na literę 'a'? " + lastLetterOfMyNameIsA);
+        
+        System.out.print("Podaj literę na którą zaczyna się twoje imię: ");  
+        char firstLetterOfFirstName = scanner.next().charAt(0);
+        System.out.print("Podaj literę na którą zaczyna się twoje nazwisko: ");  
+        char firstLetterOfLastName = scanner.next().charAt(0);
+        boolean isNameAndSurnameFirstLetterTheSame = firstLetterOfFirstName == firstLetterOfLastName;
+        System.out.println("Czy Twoje imię i nazwisko zaczyna się na tą samą literę? " + isNameAndSurnameFirstLetterTheSame);
 
         // Analogicznie jak we wcześniejszych przykładach zapisz teraz dwa własne warunki i zdania
         // logiczne.
+       
     }
 }
