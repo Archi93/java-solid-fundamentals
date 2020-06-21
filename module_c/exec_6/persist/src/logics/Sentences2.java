@@ -28,27 +28,27 @@ public class Sentences2 {
 
         // 1.
         System.out.print("Marudiks wstał lewą nogą ale nie narzekał na pogodę? ");
-        System.out.println();
+        System.out.println(gotUpLeftFoot && !complaintAboutWeather);
 
         // 2.
         System.out.print("Marudiks nie wstał lewą nogą i narzekał na pogodę lub klął na polityków? ");
-        System.out.println();
+        System.out.println(!gotUpLeftFoot && (complaintAboutWeather || cursedPoliticians));
 
         // 3.
         System.out.print("Marudiks wrócił do łóżka spać i wstał lewą nogą i nie postanowi się zmienić? ");
-        System.out.println();
+        System.out.println(gotBackToBed && gotUpLeftFoot && decidedTochange);
 
         // 4.
         System.out.print("Marudiks wstał lewą nogą i nie wrócił do łóżka i postanowił się zmienić? ");
-        System.out.println();
+        System.out.println(gotUpLeftFoot && !gotBackToBed && decidedTochange);
 
         // 5.
         System.out.print("Marudiks klnął na polityków i wrócił do łóżka albo postanowił się zmienić? ");
-        System.out.println();
+        System.out.println(cursedPoliticians && (gotBackToBed ^ decidedTochange));
 
         // 6.
         System.out.print("Marudiks albo wstał lewą nogą i klnął na polityków albo wstał lewą nogą i narzekał na pogodę lub postanowił się zmienić? ");
-        System.out.println();
+        System.out.println((gotUpLeftFoot && cursedPoliticians) ^ (gotUpLeftFoot && complaintAboutWeather) || decidedTochange);
 
         // Analogicznie jak w powyższych przykładach dopisz dwa własne zdania logiczne dotyczące Marudiksa
     }
