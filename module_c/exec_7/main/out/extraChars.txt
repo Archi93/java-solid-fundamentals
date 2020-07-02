@@ -1,0 +1,9 @@
+Symbole do budowania labiryntu:
+═
+║
+╔
+Symbole do gry w szachy:
+♔
+Symbole reprezentujące emotikony:
+😀
+🕭
