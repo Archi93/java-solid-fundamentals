@@ -1,8 +1,12 @@
 package strings;
 
+import java.util.*; 
+
 public class Operations {
 
     public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
 
         // ---
         // SEKCJA 1: TWORZENIE I DEKLAROWANIE NAPISÓW
@@ -10,23 +14,24 @@ public class Operations {
 
         System.out.println("-- Twoje dane identyfikacyjne --\n");
         System.out.print("\tTwoje imię: ");
-        System.out.println("Artur");   // Uzupełnij swoim imieniem
+        System.out.println("Artur");        // Uzupełnij swoim imieniem
         
-        String name = "Aetur";
-
+        System.out.print("Wpisz swoje imię w konsoli: ");
+        String name = scanner.nextLine().trim().toLowerCase();
         System.out.println(name);   // Uzupełnij swoim imieniem, ale wykorzystaj zmienną
 
         System.out.print("\tTwoje nazwisko: ");
         System.out.println("Błaszczyk");   // Uzupełnij swoim nazwiskiem
-
-        String surname = "Błaszczyk";
+        
+        System.out.print("Wpisz swoje imię w konsoli: ");
+        String surname = scanner.nextLine().trim().toLowerCase();
         System.out.println(surname);   // Uzupełnij swoim nazwiskiem, ale wykorzystaj zmienną
 
         System.out.print("\tTwoje pełne dane: ");
         System.out.println(name + " " + surname);   // Uzupełnij swoim imieniem i nazwiskiem, stosując operator +
         System.out.println(name.concat(" ").concat(surname));   // Uzupełnij swoim imieniem i nazwiskiem, stosując metodę concat
 
-        String fullName = "Artur Błaszczyk";
+        String fullName = name + " " + surname;
         System.out.println(fullName);   // Uzupełnij swoim imieniem i nazwiskiem, stosując zmienną fullName
 
         // ---
@@ -91,17 +96,6 @@ public class Operations {
 
         System.out.println("\tPod jakim indeksem występuje ostatni raz słowo \"Eureka\"? " + sourceText.lastIndexOf("Eureka"));
 
-//
-//
-//                          POPRAWIĆ|
-//
-//
-//
-
-
-
-
-
         System.out.println("\tCzy w tekście znajduje się słowo \"Staw\" (bez uwzględnienia wielkości znaków)? " + sourceText.toLowerCase().contains("staw"));
 
         // ---
@@ -122,14 +116,23 @@ public class Operations {
 
         System.out.println("\tFragment tekstu kończący się na drugą literę Twojego nazwiska: " + sourceText.substring(0, sourceText.indexOf(surname.charAt(1))));
 
-        System.out.println("\tFragment tekstu zaczynający się na pierwszą literę Twojego imienia i kończący na drugą literę Twojego nazwiska: " + sourceText.substring
-                                                                                                                        (sourceText.indexOf(name.charAt(0)), sourceText.lastIndexOf(surname.charAt(1))));
+        System.out.println("\tFragment tekstu zaczynający się na pierwszą literę Twojego imienia i kończący na drugą literę Twojego nazwiska: " + 
+        sourceText.substring(sourceText.indexOf(name.charAt(0)), sourceText.lastIndexOf(surname.charAt(1))));
 
-        System.out.println("\tPierwsze słowo zaczynające się na ostatnią litere Twojego imienia: " + sourceText.substring(sourceText.indexOf(" " + name.charAt(name.length() - 1)), sourceText.indexOf(" ")));
+        System.out.println("\tPierwsze słowo zaczynające się na ostatnią litere Twojego imienia: " +
+        sourceText.substring(sourceText.indexOf(" " + name.charAt(name.length() - 1)) + 1, 
+                             sourceText.indexOf(" ", sourceText.indexOf(" " + name.charAt(name.length() - 1)) + 1 )));
 
-        System.out.println("\tPierwsze słowo zaczynające się na pierwszą literę Twojego nazwiska: ");
-
-        System.out.println("\tTrzecie słowo w tekście: ");
-
+        System.out.println("\tPierwsze słowo zaczynające się na pierwszą literę Twojego nazwiska: " +
+        sourceText.substring(sourceText.indexOf(" " + surname.charAt(0)) + 1,
+                             sourceText.indexOf(" ", sourceText.indexOf(" " + surname.charAt(0)) + 1)));
+        
+        
+        int indexOfFirstSpace = sourceText.indexOf(" ");
+        int indexOfSecondSpace = sourceText.indexOf(" ", indexOfFirstSpace + 1);
+        int indexOfThirdSpace = sourceText.indexOf(" ", indexOfSecondSpace + 1);
+        
+        System.out.println("\tTrzecie słowo w tekście: " + sourceText.substring(indexOfSecondSpace, indexOfThirdSpace - 1));
+        
     }
 }
