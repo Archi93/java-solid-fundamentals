@@ -10,20 +10,23 @@ public class Operations {
 
         System.out.println("-- Twoje dane identyfikacyjne --\n");
         System.out.print("\tTwoje imię: ");
-        System.out.println();   // Uzupełnij swoim imieniem
+        System.out.println("Artur");   // Uzupełnij swoim imieniem
+        
+        String name = "Aetur";
 
-        System.out.println();   // Uzupełnij swoim imieniem, ale wykorzystaj zmienną
+        System.out.println(name);   // Uzupełnij swoim imieniem, ale wykorzystaj zmienną
 
         System.out.print("\tTwoje nazwisko: ");
-        System.out.println();   // Uzupełnij swoim nazwiskiem
+        System.out.println("Błaszczyk");   // Uzupełnij swoim nazwiskiem
 
-        System.out.println();   // Uzupełnij swoim nazwiskiem, ale wykorzystaj zmienną
+        String surname = "Błaszczyk";
+        System.out.println(surname);   // Uzupełnij swoim nazwiskiem, ale wykorzystaj zmienną
 
         System.out.print("\tTwoje pełne dane: ");
-        System.out.println();   // Uzupełnij swoim imieniem i nazwiskiem, stosując operator +
-        System.out.println();   // Uzupełnij swoim imieniem i nazwiskiem, stosując metodę concat
+        System.out.println(name + " " + surname);   // Uzupełnij swoim imieniem i nazwiskiem, stosując operator +
+        System.out.println(name.concat(" ").concat(surname));   // Uzupełnij swoim imieniem i nazwiskiem, stosując metodę concat
 
-        String fullName = "";
+        String fullName = "Artur Błaszczyk";
         System.out.println(fullName);   // Uzupełnij swoim imieniem i nazwiskiem, stosując zmienną fullName
 
         // ---
@@ -33,28 +36,36 @@ public class Operations {
         System.out.println("\n-- Pytania kontrolne --\n");
 
         // Wykorzystaj zmienne typu boolean do zapisania wyników pytań kontrolnych, jak poniżej
-        boolean firstNameSameAsLastName = false;
-        System.out.println("\tCzy Twoje imię jest takie samo jak nazwisko? " + firstNameSameAsLastName);
+        boolean nameSameAsSurname = name.equals(surname);
+        System.out.println("\tCzy Twoje imię jest takie samo jak nazwisko? " + nameSameAsSurname);
 
-        System.out.println("\tCzy Twoje imię, to \"Aleksandra\"? ");
+        boolean nameIsAleksandra = "Aleksandra".equals(name);
+        System.out.println("\tCzy Twoje imię, to \"Aleksandra\"? " + nameIsAleksandra);
 
-        System.out.println("\tCzy Twoje imię, to połączenie słow \"Aleks\" i \"andra\"? ");
+        boolean nameIsConcatOfAleksAndAndra = name.equals("Aleks".concat("andra"));
+        System.out.println("\tCzy Twoje imię, to połączenie słow \"Aleks\" i \"andra\"? " + nameIsConcatOfAleksAndAndra);
 
-        System.out.println("\tCzy Twoje imię, to nie \"Kleofiks\"? ");
+        boolean nameIsNotKleofiks =! "Kleofiks".equals(name);
+        System.out.println("\tCzy Twoje imię, to nie \"Kleofiks\"? " + nameIsNotKleofiks);
 
-        System.out.println("\tCzy Twoje imię jest w słowniku przed \"Krzysztof\"? ");
+        boolean nameIsBeforeKrzysztof = name.compareTo("Krzysztof") < 0;
+        System.out.println("\tCzy Twoje imię jest w słowniku przed \"Krzysztof\"? " + nameIsBeforeKrzysztof);
 
-        System.out.println("\tCzy Twoje nazwisko jest w słowniku przed Twoim imieniem? ");
+        boolean surnameBeforeName = surname.compareTo(name) < 0;
+        System.out.println("\tCzy Twoje nazwisko jest w słowniku przed Twoim imieniem? " + surnameBeforeName);
 
-        System.out.println("\tCzy Twoje imię jest w słowniku bliżej słowa \"Plemie\" niż Twoje nazwisko? ");
+        boolean nameCloserPlemieThanSurname = Math.abs(name.compareTo("Plemie")) < Math.abs(surname.compareTo("Plemie"));
+        System.out.println("\tCzy Twoje imię jest w słowniku bliżej słowa \"Plemie\" niż Twoje nazwisko? " + nameCloserPlemieThanSurname);
 
-        System.out.println("\tCzy Twoje imię jest dłuższe od Twojego nazwiska? ");
+        boolean nameLongerThanSurname = name.length() > surname.length();
+        System.out.println("\tCzy Twoje imię jest dłuższe od Twojego nazwiska? " + nameLongerThanSurname);
+        
+        boolean nameEndsWithLetterA = name.substring(name.length() - 1).equals("a");
+        System.out.println("\tCzy Twoje imię kończy się na literę 'a'? " + nameEndsWithLetterA);
 
-        System.out.println("\tCzy Twoje imię kończy się na literę 'a'? ");
+        //System.out.println("\tCzy Twoje imię pisane od tyłu i przodu jest takie same? ");
 
-        System.out.println("\tCzy Twoje imię pisane od tyłu i przodu jest takie same? ");
-
-        System.out.println("\tCzy imię \"Otto\" pisane od tyłu i przodu jest takie same? ");
+        //System.out.println("\tCzy imię \"Otto\" pisane od tyłu i przodu jest takie same? ");
 
         // ---
         // SEKCJA 3: WYSZUKIWANIE W NAPISACH
@@ -72,15 +83,26 @@ public class Operations {
         // W kolejnych liniach nie deklaruj i nie korzystaj z nowych zmiennych.
         // W wywołaniach System.out.println(...) użyj wyniku odpowiednich metod klasy String.
 
-        System.out.println("\tCzy Twoje imię znajduje się w tekście? ");
+        System.out.println("\tCzy Twoje imię znajduje się w tekście? " + sourceText.contains("Artur"));
 
-        System.out.println("\tCzy Twoje nazwisko znajduje się w tekście? ");
+        System.out.println("\tCzy Twoje nazwisko znajduje się w tekście? " + sourceText.contains("Błaszczyk"));
 
-        System.out.println("\tPod jakim indeksem pierwszy raz występuje Twoje imię? ");
+        System.out.println("\tPod jakim indeksem pierwszy raz występuje Twoje imię? " + sourceText.indexOf("Artur"));
 
-        System.out.println("\tPod jakim indeksem występuje ostatni raz słowo \"Eureka\"? ");
+        System.out.println("\tPod jakim indeksem występuje ostatni raz słowo \"Eureka\"? " + sourceText.lastIndexOf("Eureka"));
 
-        System.out.println("\tCzy w tekście znajduje się słowo \"Staw\" (bez uwzględnienia wielkości znaków)? ");
+//
+//
+//                          POPRAWIĆ|
+//
+//
+//
+
+
+
+
+
+        System.out.println("\tCzy w tekście znajduje się słowo \"Staw\" (bez uwzględnienia wielkości znaków)? " + sourceText.toLowerCase().contains("staw"));
 
         // ---
         // SEKCJA 4: MODYFIKOWANIE NAPISÓW
@@ -90,19 +112,20 @@ public class Operations {
         // W kolejnych liniach nie deklaruj i nie korzystaj z nowych zmiennych.
         // W wywołaniach System.out.println(...) użyj wyniku odpowiednich metod klasy String.
 
-        System.out.println("\tIle znaczących znaków (bez białych znaków z przodu i tyłu) ma tekst źródłowy? ");
+        System.out.println("\tIle znaczących znaków (bez białych znaków z przodu i tyłu) ma tekst źródłowy? " + sourceText.trim().length());
 
-        System.out.println("\tPierwsza połowa tekstu źródłowego: ");
+        System.out.println("\tPierwsza połowa tekstu źródłowego: " + sourceText.substring(0, (sourceText.length() / 2)));
 
-        System.out.println("\tDruga połowa tekstu źródłowego: ");
+        System.out.println("\tDruga połowa tekstu źródłowego: " + sourceText.substring(sourceText.length() / 2, sourceText.length()));
 
-        System.out.println("\tFragment tekstu zaczynający się od pierwszej litery Twojego imienia: ");
+        System.out.println("\tFragment tekstu zaczynający się od pierwszej litery Twojego imienia: " + sourceText.substring(sourceText.indexOf(name.charAt(0))));
 
-        System.out.println("\tFragment tekstu kończący się na drugą literę Twojego nazwiska: ");
+        System.out.println("\tFragment tekstu kończący się na drugą literę Twojego nazwiska: " + sourceText.substring(0, sourceText.indexOf(surname.charAt(1))));
 
-        System.out.println("\tFragment tekstu zaczynający się na pierwszą literę Twojego imienia i kończący na drugą literę Twojego nazwiska: ");
+        System.out.println("\tFragment tekstu zaczynający się na pierwszą literę Twojego imienia i kończący na drugą literę Twojego nazwiska: " + sourceText.substring
+                                                                                                                        (sourceText.indexOf(name.charAt(0)), sourceText.lastIndexOf(surname.charAt(1))));
 
-        System.out.println("\tPierwsze słowo zaczynające się na ostatnią litere Twojego imienia: ");
+        System.out.println("\tPierwsze słowo zaczynające się na ostatnią litere Twojego imienia: " + sourceText.substring(sourceText.indexOf(" " + name.charAt(name.length() - 1)), sourceText.indexOf(" ")));
 
         System.out.println("\tPierwsze słowo zaczynające się na pierwszą literę Twojego nazwiska: ");
 
