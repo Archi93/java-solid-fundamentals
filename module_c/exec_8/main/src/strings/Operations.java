@@ -46,6 +46,9 @@ public class Operations {
 
         boolean nameIsAleksandra = "Aleksandra".equals(name);
         System.out.println("\tCzy Twoje imię, to \"Aleksandra\"? " + nameIsAleksandra);
+        
+        boolean nameIsArtur = "Artur" == name;
+        System.out.println("\tCzy Twoje imię, to \"Artur\"? " + nameIsArtur);
 
         boolean nameIsConcatOfAleksAndAndra = name.equals("Aleks".concat("andra"));
         System.out.println("\tCzy Twoje imię, to połączenie słow \"Aleks\" i \"andra\"? " + nameIsConcatOfAleksAndAndra);
@@ -95,6 +98,10 @@ public class Operations {
         System.out.println("\tPod jakim indeksem pierwszy raz występuje Twoje imię? " + sourceText.indexOf("Artur"));
 
         System.out.println("\tPod jakim indeksem występuje ostatni raz słowo \"Eureka\"? " + sourceText.lastIndexOf("Eureka"));
+        
+        System.out.println("\tPod jakim indeksem występuje ostatni raz słowo \"asdfghjkl\"? " + sourceText.lastIndexOf("asdfghjkl"));
+        
+        System.out.println("\tPod jakim indeksem występuje pierwszy raz słowo \"asdfghjkl\"? " + sourceText.indexOf("asdfghjkl"));
 
         System.out.println("\tCzy w tekście znajduje się słowo \"Staw\" (bez uwzględnienia wielkości znaków)? " + sourceText.toLowerCase().contains("staw"));
 
@@ -111,6 +118,13 @@ public class Operations {
         System.out.println("\tPierwsza połowa tekstu źródłowego: " + sourceText.substring(0, (sourceText.length() / 2)));
 
         System.out.println("\tDruga połowa tekstu źródłowego: " + sourceText.substring(sourceText.length() / 2, sourceText.length()));
+        
+        //System.out.println("\tDruga połowa tekstu źródłowego: " + sourceText.substring(sourceText.length() / 2, sourceText.length() + 1 ));
+        //
+        //Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 173, end 348, length 347
+        //at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319)
+        //at java.base/java.lang.String.substring(String.java:1874)
+        //at strings.Operations.main(Operations.java:119)
 
         System.out.println("\tFragment tekstu zaczynający się od pierwszej litery Twojego imienia: " + sourceText.substring(sourceText.indexOf(name.charAt(0))));
 
