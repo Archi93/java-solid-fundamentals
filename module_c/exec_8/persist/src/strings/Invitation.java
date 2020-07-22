@@ -35,8 +35,22 @@ public class Invitation {
                 oraz tekstu " \u003B\u0029".
      */
     public static String computeThoughts(String source) {
-        // Tutaj uzupełnij implementację, aby była zgodną z algorytmem w dokumentacji metody.
+        int beginOfIWord = source.indexOf("i");
+        int endOfIWord = source.indexOf(" ", beginOfIWord);
+        
+        String firstIWord = source.substring(beginOfIWord, endOfIWord);
+        
+        int expandedLengthOfIWord = (firstIWord.length() * 4) + 1;
+        
+        int indexOfLWord = source.indexOf("l");
+        String firstLWord = source.substring(indexOfLWord, indexOfLWord + expandedLengthOfIWord);
+        
+        int expandedLegthOfSource = (int)((source.length() / 1.17) + 1);
+        
+        int beginOfThirdSubstring = source.indexOf(expandedLegthOfSource);
+        int endOfThirdSubstring = source.indexOf(beginOfThirdSubstring, beginOfThirdSubstring + (2 * 2 * 2));
+        String thirdSubstring = source.substring(beginOfThirdSubstring, endOfThirdSubstring);
 
-        return "";
+        return thirdSubstring;
     }
 }

@@ -129,6 +129,7 @@ public class Operations {
         System.out.println("\tFragment tekstu zaczynający się od pierwszej litery Twojego imienia: " + sourceText.substring(sourceText.indexOf(name.charAt(0))));
 
         System.out.println("\tFragment tekstu kończący się na drugą literę Twojego nazwiska: " + sourceText.substring(0, sourceText.indexOf(surname.charAt(1))));
+        //Problem z polskimi znakami diakrytycznymi - kwestia kodowania do rozwiązania.
 
         System.out.println("\tFragment tekstu zaczynający się na pierwszą literę Twojego imienia i kończący na drugą literę Twojego nazwiska: " + 
         sourceText.substring(sourceText.indexOf(name.charAt(0)), sourceText.lastIndexOf(surname.charAt(1))));
