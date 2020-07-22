@@ -38,19 +38,23 @@ public class Invitation {
         int beginOfIWord = source.indexOf("i");
         int endOfIWord = source.indexOf(" ", beginOfIWord);
         
-        String firstIWord = source.substring(beginOfIWord, endOfIWord);
+        String firstSubstring = source.substring(beginOfIWord, endOfIWord);
         
-        int expandedLengthOfIWord = (firstIWord.length() * 4) + 1;
+        int expandedLengthOfFirstSubstring = (firstSubstring.length() * 4) + 1;
         
-        int indexOfLWord = source.indexOf("l");
-        String firstLWord = source.substring(indexOfLWord, indexOfLWord + expandedLengthOfIWord);
+        int startOfSecondSubstring = source.indexOf("l");
+        String secondSubstring = source.substring(startOfSecondSubstring, startOfSecondSubstring + expandedLengthOfFirstSubstring);
         
         int expandedLegthOfSource = (int)((source.length() / 1.17) + 1);
         
-        int beginOfThirdSubstring = source.indexOf(expandedLegthOfSource);
-        int endOfThirdSubstring = source.indexOf(beginOfThirdSubstring, beginOfThirdSubstring + (2 * 2 * 2));
-        String thirdSubstring = source.substring(beginOfThirdSubstring, endOfThirdSubstring);
+        //System.out.println("expandedLengthOfSource = " + expandedLegthOfSource);
+        
+        //int beginOfThirdSubstring = source.indexOf(expandedLegthOfSource);
+        //int endOfThirdSubstring = source.indexOf(beginOfThirdSubstring, beginOfThirdSubstring + (2 * 2 * 2));
+        String thirdSubstring = source.substring(expandedLegthOfSource, expandedLegthOfSource + (2 * 2 * 2) );
+        
+        String finalString = "Java " + secondSubstring + firstSubstring.concat(" ") + thirdSubstring + " \u003B\u0029";
 
-        return thirdSubstring;
+        return finalString;
     }
 }
