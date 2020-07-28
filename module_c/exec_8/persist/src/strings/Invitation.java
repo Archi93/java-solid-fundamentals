@@ -47,10 +47,6 @@ public class Invitation {
         
         int expandedLegthOfSource = (int)((source.length() / 1.17) + 1);
         
-        //System.out.println("expandedLengthOfSource = " + expandedLegthOfSource);
-        
-        //int beginOfThirdSubstring = source.indexOf(expandedLegthOfSource);
-        //int endOfThirdSubstring = source.indexOf(beginOfThirdSubstring, beginOfThirdSubstring + (2 * 2 * 2));
         String thirdSubstring = source.substring(expandedLegthOfSource, expandedLegthOfSource + (2 * 2 * 2) );
         
         String finalString = "Java " + secondSubstring + firstSubstring.concat(" ") + thirdSubstring + " \u003B\u0029";
