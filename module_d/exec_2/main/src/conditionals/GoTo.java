@@ -111,7 +111,27 @@ public class GoTo {
 
         // Twój kod do 4. Fragmentu:
         {
-
+            int score = r.nextInt(100);
+            if (score >= 95) {
+                System.out.println("Twoja ocena: 6!");
+            } else {
+                if (score >= 80) {
+                    System.out.println("Twoja ocena: 5!");
+                } else {
+                    if (score >= 60) {
+                        System.out.println("Twoja ocena: 4!");
+                    } else {
+                        if (score >= 40) {
+                            System.out.println("Twoja ocena: 3!");
+                        } else {
+                            System.out.println("Twoja ocena: 2!");
+                        } 
+                
+                    } 
+                
+                } 
+            } 
+            System.out.println("Ilość punktów: " + score);
         }
 
         /* 5. Fragment
